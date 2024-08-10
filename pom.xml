@@ -5,6 +5,7 @@
     <groupId>MavenBDD</groupId>
     <artifactId>MavenBDD</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging> <!-- Add this line to specify WAR packaging -->
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -32,6 +33,13 @@
             <artifactId>cucumber-java</artifactId>
             <version>7.15.0</version>
         </dependency>
+        <!-- Add servlet API dependency if needed (usually provided by the server) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,6 +51,16 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!-- Add the Maven WAR plugin to handle WAR-specific tasks -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <!-- Specify the name of the WAR file -->
+                    <warName>MavenBDD</warName>
                 </configuration>
             </plugin>
         </plugins>
