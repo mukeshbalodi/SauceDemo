@@ -70,11 +70,11 @@
     <distributionManagement>
         <repository>
             <id>releases-repo</id>
-            <url>http://your.repo.url/repository/maven-releases/</url>
+            <url>https://maven.apache.org/xsd/maven-4.0.0.xsd/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots-repo</id>
-            <url>http://your.repo.url/repository/maven-snapshots/</url>
+            <url>https://maven.apache.org/xsd/maven-4.0.0.xsd/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
