@@ -5,35 +5,35 @@
     <groupId>MavenBDD</groupId>
     <artifactId>MavenBDD</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging> <!-- Add this line to specify WAR packaging -->
+    <packaging>war</packaging> <!-- Specify WAR packaging -->
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <!-- Selenium dependency -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.11.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <!-- TestNG dependency for testing -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <!-- Cucumber TestNG integration -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>7.15.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <!-- Cucumber Java -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.15.0</version>
         </dependency>
-        <!-- Add servlet API dependency if needed (usually provided by the server) -->
+        <!-- Servlet API (provided by the server) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -44,6 +44,7 @@
 
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -53,16 +54,27 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!-- Add the Maven WAR plugin to handle WAR-specific tasks -->
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <!-- Specify the name of the WAR file -->
                     <warName>MavenBDD</warName>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <!-- Distribution Management section for deployment -->
+    <distributionManagement>
+        <repository>
+            <id>releases-repo</id>
+            <url>http://your.repo.url/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots-repo</id>
+            <url>http://your.repo.url/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
